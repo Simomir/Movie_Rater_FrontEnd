@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { MainModule } from './main/main.module';
@@ -18,6 +18,7 @@ const routes: Routes = [
     BrowserModule,
     AuthModule,
     MainModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
   ],
   exports: [RouterModule],

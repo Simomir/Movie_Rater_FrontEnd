@@ -8,12 +8,15 @@ import { ApiService } from 'src/app/api.service';
 })
 export class MovieListComponent implements OnInit {
 
-  // mockup data
-  movies = ['Terminator', 'Predator'];
+  movies = new Array();
 
   constructor(private apiService: ApiService) {  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    return this.apiService.getMovies().subscribe({
+      next: (data: any) => this.movies = data,
+      error: (error: Error) => console.error(error)
+    });
   }
 
 }
